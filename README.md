@@ -38,7 +38,9 @@ Some prompts to answer:
 
    Songs with the highest overall scores get recommended, ranking them from best match to weakest match.
 
-You can include a simple diagram or bullet list if helpful.
+- Finalized "Algorithm Recipe" and a brief note on any potential biases you expect.
+
+  My finalized Algorithm Recipe is a simple content-based scoring system. For each song, I give +2.0 points if the genre matches the user’s favorite genre, +1.0 points if the mood matches the user’s favorite mood, and then add similarity points based on how close the song’s energy is to the user’s target energy. I can calculate the energy similarity with a distance-based rule such as 1 - |SongEnergy - TargetEnergy|, so songs with energy values near the user’s preferred level receive higher scores. After scoring all songs, I rank them from highest to lowest and recommend the top results. I expect this recommender to have a few biases. It may over-prioritize genre, since a genre match gives the largest score, and that could cause it to miss songs that are a great mood match but belong to a different genre. It may also favor songs with energy values close to the user’s target, which could make it seem too narrow if the user actually likes a wider range of moods or styles. In a real system, this kind of bias could make recommendations feel repetitive or overly predictable.
 
 ---
 
