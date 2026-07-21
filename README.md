@@ -23,9 +23,20 @@ Some prompts to answer:
 
 - What features does each `Song` use in your system
   - For example: genre, mood, energy, tempo
+
+  Each Song uses features such as genre, mood, energy, tempo, valence, danceability, and acousticness to compare songs by their musical characteristics. 
+
 - What information does your `UserProfile` store
+
+  The UserProfile stores the user’s preferred genre, preferred mood, target energy level, and whether they tend to like acoustic songs.
+
 - How does your `Recommender` compute a score for each song
+
+  The Recommender computes a score for each song by giving points for matching these preferences, with closer matches in numerical features like energy receiving higher scores.
+
 - How do you choose which songs to recommend
+
+   Songs with the highest overall scores get recommended, ranking them from best match to weakest match.
 
 You can include a simple diagram or bullet list if helpful.
 
