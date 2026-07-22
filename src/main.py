@@ -18,15 +18,22 @@ def main() -> None:
     # Starter example profile
     user_prefs = {"genre": "pop", "mood": "happy", "energy": 0.8}
 
-    recommendations = recommend_songs(user_prefs, songs, k=5)
+    top_k = 5
 
-    print("\nTop recommendations:\n")
-    for rec in recommendations:
+    print("\nUser preferences:")
+    print(f"Genre: {user_prefs['genre']}")
+    print(f"Mood: {user_prefs['mood']}")
+    print(f"Energy target: {user_prefs['energy']:.2f}")
+    print(f"\nTop {top_k} recommendations:\n")
+
+    recommendations = recommend_songs(user_prefs, songs, k=top_k)
+
+    for index, rec in enumerate(recommendations, start=1):
         # You decide the structure of each returned item.
         # A common pattern is: (song, score, explanation)
         song, score, explanation = rec
-        print(f"{song['title']} - Score: {score:.2f}")
-        print(f"Because: {explanation}")
+        print(f"{index}. {song['title']} - Score: {score:.2f}")
+        print(f"   Because: {explanation}")
         print()
 
 
