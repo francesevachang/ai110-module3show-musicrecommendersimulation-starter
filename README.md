@@ -122,6 +122,8 @@ Use this section to document the experiments you ran. For example:
 - What happened when you added tempo or valence to the score
 - How did your system behave for different types of users
 
+This section is covered in model_card.md.
+
 ---
 
 ## Limitations and Risks
@@ -136,6 +138,8 @@ Examples:
 
 You will go deeper on this in your model card.
 
+This section is covered in model_card.md.
+
 ---
 
 ## Reflection
@@ -149,5 +153,5 @@ Write 1 to 2 paragraphs here about what you learned:
 - about how recommenders turn data into predictions
 - about where bias or unfairness could show up in systems like this
 
-
+This section is covered in model_card.md.
 
