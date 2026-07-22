@@ -45,14 +45,36 @@ class Recommender:
         # TODO: Implement explanation logic
         return "Explanation placeholder"
 
+import csv
+
+
 def load_songs(csv_path: str) -> List[Dict]:
     """
     Loads songs from a CSV file.
     Required by src/main.py
     """
-    # TODO: Implement CSV loading logic
     print(f"Loading songs from {csv_path}...")
-    return []
+
+    with open(csv_path, newline="", encoding="utf-8") as csv_file:
+        reader = csv.DictReader(csv_file)
+        songs: List[Dict] = []
+
+        for row in reader:
+            song = {
+                "id": int(row["id"]),
+                "title": row["title"],
+                "artist": row["artist"],
+                "genre": row["genre"],
+                "mood": row["mood"],
+                "energy": float(row["energy"]),
+                "tempo_bpm": float(row["tempo_bpm"]),
+                "valence": float(row["valence"]),
+                "danceability": float(row["danceability"]),
+                "acousticness": float(row["acousticness"]),
+            }
+            songs.append(song)
+
+    return songs
 
 def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
     """
