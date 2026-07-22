@@ -73,7 +73,7 @@ def load_songs(csv_path: str) -> List[Dict]:
                 "acousticness": float(row["acousticness"]),
             }
             songs.append(song)
-
+    print(f"Loaded {len(songs)} songs.")
     return songs
 
 def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
