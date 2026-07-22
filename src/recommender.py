@@ -49,10 +49,7 @@ import csv
 
 
 def load_songs(csv_path: str) -> List[Dict]:
-    """
-    Loads songs from a CSV file.
-    Required by src/main.py
-    """
+    """Load songs from a CSV file into a list of dicts."""
     print(f"Loading songs from {csv_path}...")
 
     with open(csv_path, newline="", encoding="utf-8") as csv_file:
@@ -77,10 +74,7 @@ def load_songs(csv_path: str) -> List[Dict]:
     return songs
 
 def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
-    """
-    Scores a single song against user preferences.
-    Required by recommend_songs() and src/main.py
-    """
+    """Score a single song against user preferences, returning the score and reasons."""
     score = 0.0
     reasons: List[str] = []
 
@@ -105,10 +99,7 @@ def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
 
 
 def recommend_songs(user_prefs: Dict, songs: List[Dict], k: int = 5) -> List[Tuple[Dict, float, str]]:
-    """
-    Functional implementation of the recommendation logic.
-    Required by src/main.py
-    """
+    """Return the top-k songs scored and sorted against user preferences."""
     scored_songs: List[Tuple[Dict, float, str]] = []
 
     for song in songs:
